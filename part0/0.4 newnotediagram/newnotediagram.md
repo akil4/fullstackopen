@@ -5,7 +5,10 @@
     
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    server-->>browser: the new note
+    
+    Note right of browser: New note: 'you have no enemies' submitted
+    
+    server-->>browser: Do GET https://studies.cs.helsinki.fi/exampleapp/notes
     deactivate server
     
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
@@ -27,7 +30,7 @@
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     activate server
-    server-->>browser: [{ "content": "HTML is easy", "date": "2023-1-1" }, ... ]
+    server-->>browser: [{ "content": "you have no enemies", "date": "11-01-2025" }, ... ]
     deactivate server
 
     Note right of browser: The browser executes the callback function that renders the notes
